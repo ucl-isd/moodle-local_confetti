@@ -1,9 +1,9 @@
 <?php
 defined('MOODLE_INTERNAL') || die();
 
-return [
+$callbacks = [
     [
-        'hook' => core\hook\output\before_standard_head_html_generation::class,
-        'callback' => [local_confetti\hook\before_standard_head_html_generation::class, 'callback']
+        'hook' => \core\hook\output\before_standard_head_html_generation::class,
+        'callback' => [\local_confetti\hook_callbacks::class, 'before_standard_head_html_generation'],
     ],
 ];
